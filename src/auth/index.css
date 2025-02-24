@@ -1,0 +1,25 @@
+.custom-mb {
+    margin-bottom: 27px;
+  }
+
+.margin-border{
+    padding: 38px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), 1px 5px 17px rgba(36, 36, 36, 0.3);
+    border-radius: 16px;
+}
+.input-container {
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.5);
+  }
+  
+
+.personalized{
+    padding: 9px;
+    font-size: 18px;
+}
+
+.padding-personalized{
+    padding-left: 10%;
+    padding-right: 10%;
+}

@@ -3,6 +3,7 @@ import './index.css';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../hooks/UserContext';
 import { toast } from 'react-toastify';
+import { Typewriter } from 'react-simple-typewriter';
 
 function Home() {
   const [tela, setTela] = useState<"inicio" | "askName">("inicio");
@@ -21,6 +22,10 @@ function Home() {
     }
    
   }
+
+  const handleToRegister = () =>{
+    navigate(`/register`);
+  }
     return (
       <>
         
@@ -29,9 +34,19 @@ function Home() {
           {tela === "inicio" &&  nome === "" && (
              <div className="opacity-100 transition-opacity duration-500">
               
-              <h1 className="font-bold text-4xl mb-4">Olá, Seja bem-vindo! </h1>
+              <h1 className="font-bold text-4xl mb-4">
+                <Typewriter
+                words={['Olá, seja bem-vindo!', 'Conecte-se e converse com novas pessoas!']}
+                loop={true}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={2000}
+              /> 
+              </h1>
               <p className="mt-4 px-4 text-lg text-gray-300">
-                Aqui você pode conhecer pessoas novas e interagir sempre que quiser alguém para conversar!
+                Converse com pessoas de todo o mundo e faça novas conexões a um clique de distância!
               </p>
 
               <div className="flex flex-col items-center">
@@ -76,6 +91,12 @@ function Home() {
               >
                 Entrar no lobby
               </button>
+              <button
+                className="mt-7 px-4 py-3 h-12 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-lg transition-all duration-300 text-xl shadow-md hover:shadow-lg"
+                onClick={handleToRegister}
+              >
+                Cadastrar
+              </button>
             </div>
           )}
 
@@ -89,6 +110,8 @@ function Home() {
               </p>
             </div>
           )}
+
+
         </div>
       </>
     );

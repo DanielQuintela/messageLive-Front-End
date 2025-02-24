@@ -21,10 +21,14 @@ const HeaderContainer = () => {
     navigate("/"); 
   };
 
+  const handleHome = () => {
+    navigate("/"); 
+  }
+
   return (
     <>
       <header className="bg-black/70 p-3 absolute top-0 left-0 w-full flex items-center justify-between">
-        <h1 className="text-[#ffffff] ml-3 lg:text-2xl">MessageLive</h1>
+        <h1 className="text-[#ffffff] ml-3 lg:text-2xl" onClick={handleHome}>MessageLive</h1>
 
         {nome && (
           <button onClick={() => setShowModalCancelConfirm(true)}>
