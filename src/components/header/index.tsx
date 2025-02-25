@@ -17,6 +17,7 @@ const HeaderContainer = () => {
       socket.emit("logout", nome); // Envia para o back-end que o usuário desconectou
     }
     setNome(""); // Reseta no estado do usuário
+    localStorage.removeItem('token')
     setShowModalCancelConfirm(false);
     navigate("/"); 
   };

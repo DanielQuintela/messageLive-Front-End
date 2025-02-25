@@ -1,25 +1,41 @@
 .custom-mb {
     margin-bottom: 27px;
+    color: #40ff27;
+  }
+
+  .button-login{
+    padding: 10px;
+    background-color: #40ff27;
+    margin-top: 35px;
+    margin-bottom:  0.75rem;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), 1px 6px 17px #35d320;
   }
 
 .margin-border{
     padding: 38px;
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), 1px 5px 17px rgba(36, 36, 36, 0.3);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), 3px 8px 20px rgba(0, 0, 0, 0.3);
     border-radius: 16px;
 }
-.input-container {
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3), -6px -6px 15px rgba(255, 255, 255, 0.5);
-  }
-  
 
 .personalized{
     padding: 9px;
     font-size: 18px;
+    margin-bottom:  0.75rem;
 }
 
 .padding-personalized{
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.text-size{
+  font-size: 20px;
+}
+
+.btn-x{
+  top: 40px;
+  right: 45px;
+  font-size: 30px;
+  border-radius: 20px;
+  color: #35d320;
 }
