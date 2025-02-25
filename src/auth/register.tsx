@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { RegisterFormData } from "../types/auth";
 import './index.css';
-import { createUser } from "../services/register/register";
+import { authUser, createUser } from "../services/register/register";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 function Auth() {
   const initialValue = {
     email: '',
@@ -11,6 +13,7 @@ function Auth() {
 
   const [formatdata, setFormatData] = useState<RegisterFormData>(initialValue);
   const [tela, setTela] = useState<"login" | "cadastro">("login");
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -24,10 +27,17 @@ function Auth() {
   const handleCreateUSer = () =>{
     const user = createUser(formatdata)
     console.log(user);
-  }
-  const handleLogin = () =>{
-    
-  }
+  };
+
+  const handleLogin = async() =>{
+    const user = await authUser(formatdata)
+    if(!user.success){
+      toast.error(user.message)
+      return
+    }
+    localStorage.setItem('token', user.token);
+    navigate('/lobby')
+  };
 
   return (
     <div className="flex flex-col items-center  justify-center h-screen bg-gray-900 text-white padding-personalized min-h-screen">
