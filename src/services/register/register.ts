@@ -25,9 +25,9 @@ export const createUser = async (formData: RegisterFormData) => {
                 },
                 body: JSON.stringify(formData),
             });
-            return response
+            return response.json();
     } catch (error: any) {
-        throw new Error(error.response.data.message);
+        throw new Error(error.response.data.message || 'Erro desconhecido');
     }
 };
 

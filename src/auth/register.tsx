@@ -26,9 +26,14 @@ function Auth() {
     setTela(tela === "login" ? "cadastro" : "login");
   };
 
-  const handleCreateUSer = () =>{
-    const user = createUser(formatdata)
-    console.log(user);
+  const handleCreateUSer = async () =>{
+    const user = await createUser(formatdata);
+    if(!user.success){
+      toast.error(user.message)
+      return
+    }
+    toast.success(`Usuário cadastrado com sucesso!`);
+    handleSwitchScreen()
   };
 
   const handleLogin = async() =>{
@@ -38,8 +43,8 @@ function Auth() {
       return
     }
     localStorage.setItem('token', user.token);
-    const userName = user.userName
-    socket.emit("join", userName)
+    const userName = user.userName;
+    socket.emit("join", userName);
 
     navigate('/lobby')
     toast.success(`Bem vindo de volta, ${userName} !`)
@@ -90,7 +95,7 @@ function Auth() {
           <span className="text-size text-gray-300">
             {tela === "login" ? "Não tem uma conta? " : "Já tem uma conta? "}
           </span>
-          <button onClick={handleSwitchScreen} className="text-purple-500 font-semibold hover:underline text-gray-100 mt-4 text-size">
+          <button onClick={handleSwitchScreen} className="font-semibold hover:underline text-gray-100 mt-4 text-size">
             {tela === "login" ? "Cadastre-se" : "Login"}
           </button>
         </div>
