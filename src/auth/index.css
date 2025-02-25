@@ -18,9 +18,20 @@
 }
 
 .personalized{
-    padding: 9px;
+    padding: 10px;
     font-size: 18px;
-    margin-bottom:  0.75rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease; 
+}
+
+.personalized:focus {
+  outline: none; 
+  border: 0.5px solid #35d320; 
+  box-shadow: 0 0 0 2px #35d320; /* sombra do contorno */
+}
+
+input[type="password"].personalized{
+  margin-bottom: 10px;
 }
 
 .padding-personalized{

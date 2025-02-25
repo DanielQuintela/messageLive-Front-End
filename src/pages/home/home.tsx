@@ -31,14 +31,6 @@ function Home() {
 
             {/* Abaixo a responsividade em top e right para telas menores e md:top e md:rigth para telas maiores */}
 
-            {/* <button
-              onClick={() => navigate('/')}
-              className="absolute top-[-60px] right-[-5px] md:top-[-70px] md:right-[-80px] 
-                         bg-[#435585] text-white font-bold text-lg px-3 py-2 rounded-lg shadow-lg "
-            >
-              <span className="text-lg">⬅️</span> Voltar
-              </button> */}
-
               <h1 className="font-bold text-3xl mb-4">Qual é o seu nome?</h1>
                 <input
                   type="text"

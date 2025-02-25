@@ -52,7 +52,7 @@ function Auth() {
             {tela === "login" ? "LOGIN" : "Cadastro"}
         </h2>
         <button
-          onClick={() => navigate("/home")} 
+          onClick={tela === "login" ? () => navigate("/home") : handleSwitchScreen} 
           className="absolute right-4 btn-x hover:text-gray-400 transition-all duration-300 text-2xl"
         >
           &times;
@@ -72,7 +72,7 @@ function Auth() {
             value={formatdata.email}
             placeholder="Email"
             name="email"
-            className="personalized  rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+            className="personalized rounded-lg text-black focus:outline-none transition"  
           />
           <input
             onChange={handleChange}
@@ -80,7 +80,7 @@ function Auth() {
             placeholder="Senha"
             name="password"
             type="password"
-            className="personalized rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-purple-500 transition"
+            className="personalized rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-[#35d320] transition"
           />
           <button className="w-full text-black font-bold rounded-lg transition-all duration-300 button-login"  onClick={tela ==="login" ? handleLogin : handleCreateUSer}>
             {tela === "login" ? "Entrar" : "Cadastrar"}
