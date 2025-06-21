@@ -17,14 +17,19 @@ const HeaderContainer = () => {
       socket.emit("logout", nome); // Envia para o back-end que o usuário desconectou
     }
     setNome(""); // Reseta no estado do usuário
+    localStorage.removeItem('token')
     setShowModalCancelConfirm(false);
     navigate("/"); 
   };
 
+  const handleHome = () => {
+    navigate("/"); 
+  }
+
   return (
     <>
       <header className="bg-black/70 p-3 absolute top-0 left-0 w-full flex items-center justify-between">
-        <h1 className="text-[#ffffff] ml-3 lg:text-2xl">MessageLive</h1>
+        <h1 className="text-[#ffffff] ml-3 lg:text-2xl cursor-pointer" onClick={handleHome}>MessageLive</h1>
 
         {nome && (
           <button onClick={() => setShowModalCancelConfirm(true)}>

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { io } from "socket.io-client";
-const APIPORT = process.env.PORT || 5000
+const APIPORT = process.env.PORT || 4000
 const socket = io(`http://localhost:${APIPORT}`); 
 
 interface UserContextType {
